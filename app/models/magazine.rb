@@ -1,12 +1,30 @@
+
 class Magazine
-  attr_accessor :name, :category
+attr_accessor :name,:category
+@@all=[]
+
+    def initialize(name,category)
+        @name=name
+        @category=category
+        @@all << self
 
 
-  def initialize(name, category)
-    @name = name
-    @category = category
+    end
+def self.all
+@@all
+end
 
-  end
+def contributors
+    articles = Author.all.filter do |article|
+        self == article.magazine
+    end
+    articles.map do |article|
+    art.author
+        end
+
+    end
+
+
 
 
 end
